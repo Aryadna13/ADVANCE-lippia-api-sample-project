@@ -16,6 +16,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
+import static services.BaseService.API_KEY;
+
 public class CommonSteps extends PageSteps {
 
     @When("^I perform a '(.*)' to '(.*)' endpoint with the '(.*)' and '(.*)'$")
@@ -38,5 +40,9 @@ public class CommonSteps extends PageSteps {
         return parameters;
     }
 
+    @Given("el usuario posee una (.*)$")
+    public void elUsuarioPoseeUnaXApiKey(String token) {
+        API_KEY.set(token);
+    }
 
 }
