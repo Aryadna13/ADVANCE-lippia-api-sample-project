@@ -1,8 +1,8 @@
 package ar.steps;
 
 import com.crowdar.core.PageSteps;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
+import io.cucumber.java.en.*;
+
 
 import static services.BaseService.API_KEY;
 

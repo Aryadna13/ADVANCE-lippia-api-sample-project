@@ -11,7 +11,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.apache.commons.lang.StringUtils;
 import org.testng.Assert;
+import services.BaseService;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -41,8 +43,8 @@ public class CommonSteps extends PageSteps {
     }
 
     @Given("el usuario posee una (.*)$")
-    public void elUsuarioPoseeUnaXApiKey(String token) {
+    public void elUsuarioPoseeUnaXApiKey(String token) throws IOException {
+        BaseService.setToken(token);
         API_KEY.set(token);
     }
-
 }

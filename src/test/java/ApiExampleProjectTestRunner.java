@@ -1,3 +1,2 @@
 import com.crowdar.bdd.cukes.TestNGSecuencialRunner;
-public class ApiExampleProjectTestRunner extends TestNGSecuencialRunner {
-}
+public class ApiExampleProjectTestRunner extends TestNGSecuencialRunner {}

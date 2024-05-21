@@ -4,5 +4,5 @@
     "x-api-key": "{{api.key}}"
   },
   "endpoint": "v1/workspaces",
-  "url": "https://api.clockify.me/api/"
+  "Base.url": "{{base.url}}"
 }
