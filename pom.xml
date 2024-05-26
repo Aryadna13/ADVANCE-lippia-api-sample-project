@@ -9,15 +9,6 @@
         <version>3.3.0.2</version>
     </parent>
 
-    <developers>
-        <developer>
-            <id>Brabbit</id>
-            <name>Ariadna Garcia</name>
-            <email>garciaariadna139@gmail.com</email>
-            <timezone>Latam/Argentina</timezone>
-        </developer>
-    </developers>
-
     <groupId>com.Crowdar</groupId>
     <artifactId>lippia-api-example-project</artifactId>
     <name>api-rest-automation</name>
@@ -26,27 +17,22 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.build.timestamp.format>dd-MM-yyyy-HH-mm-ss</maven.build.timestamp.format>
-        <buildIdentifier>Ariadna_Garcia_${maven.build.timestamp}</buildIdentifier>
-        <base.api.url>https://reqres.in/api/users</base.api.url>
+        <base.api.url>https://api.clockify.me/api</base.api.url>
         <cucumber.stepsDefinitions>--glue ar/steps --glue com/crowdar/api/rest</cucumber.stepsDefinitions>
         <cucumber.hooks>--glue com/crowdar/bdd/cukes --glue ar/apiExampleProject/hook</cucumber.hooks>
-        <cucumber.tags>@AllWorkspace</cucumber.tags>
+        <cucumber.tags>@ok</cucumber.tags>
         <crowdar.cucumber.plugins>--plugin pretty --plugin api.report.CucumberReporter:</crowdar.cucumber.plugins>
         <crowdar.extent.host.name>LocalMachine</crowdar.extent.host.name>
         <crowdar.extent.environment>Local</crowdar.extent.environment>
         <crowdar.extent.user.name>User.name</crowdar.extent.user.name>
         <test-manager.report>--plugin api.report.TestManagerReporter:</test-manager.report>
-        <crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not
-            @Ignore' --tags ${cucumber.tags} ${crowdar.cucumber.plugins}
-        </crowdar.cucumber.option>
+		<crowdar.cucumber.option>src/test/resources/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' --tags ${cucumber.tags} ${crowdar.cucumber.plugins}</crowdar.cucumber.option>
         <crowdar.projectType>API</crowdar.projectType>
     </properties>
     <profiles>
         <profile>
             <id>Secuencial</id>
-            <activation>
-            </activation>
+
             <properties>
                 <apiExample.runner>testngSecuencial.xml</apiExample.runner>
             </properties>
@@ -101,9 +87,14 @@
         </dependency>
     </dependencies>
     <build>
-        <filters>
-            <filter>src/main/resources/cucumber.properties</filter>
-        </filters>
+
+        <testResources>
+            <testResource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -121,6 +112,7 @@
                         <TEST_MANAGER_USERNAME></TEST_MANAGER_USERNAME>
                         <TEST_MANAGER_PASSWORD></TEST_MANAGER_PASSWORD>
                         <buildIdentifier>${buildIdentifier}</buildIdentifier>
+
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

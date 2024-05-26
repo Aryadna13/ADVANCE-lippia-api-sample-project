@@ -14,7 +14,7 @@
     <documentTitle>Ariadna Garcia QA</documentTitle>
 
     <!-- report name - displayed at top-nav -->
-    <reportName>TP6 Core Report - Cucumber Report</reportName>
+    <reportName>TP6 Lippia Api Report </reportName>
 
     <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
     <dateFormat>yyyy-MM-dd</dateFormat>

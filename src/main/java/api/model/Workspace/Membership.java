@@ -1,10 +1,10 @@
 package api.model.Workspace;
 
 public class Membership {
-    public String userId;
-    public Object hourlyRate;
-    public Object costRate;
-    public String targetId;
-    public String membershipType;
+    public CostRate costRate;
+    public HourlyRate hourlyRate;
     public String membershipStatus;
+    public String membershipType;
+    public String targetId;
+    public String userId;
 }

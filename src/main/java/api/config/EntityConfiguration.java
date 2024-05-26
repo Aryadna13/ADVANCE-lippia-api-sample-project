@@ -13,12 +13,14 @@ public enum EntityConfiguration {
 
     WORKSPACE {
         @Override
-        public Class<?> getEntityService() {
-            return WorkspaceService.class;
-        }
+        public Class<?> getEntityService() { return WorkspaceService.class; }
     };
 
+    public abstract Class<?> getEntityService();
+}
 
+
+/*
     PROJECT {
         @Override
         public Class<?> getEntityService () {
@@ -48,6 +50,9 @@ public enum EntityConfiguration {
 
     public abstract Class<?> getEntityService();
 }
+
+ */
+
 
 
 

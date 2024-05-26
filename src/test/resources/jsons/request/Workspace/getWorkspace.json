@@ -1,8 +1,9 @@
 {
   "headers": {
+    "Accept": "application/json",
     "Content-Type": "application/json",
     "x-api-key": "{{api.key}}"
   },
   "endpoint": "v1/workspaces",
-  "url": "https://api.clockify.me/api/"
+  "base.url": "{base.api.url}}"
 }
